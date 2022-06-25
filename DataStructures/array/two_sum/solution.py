@@ -40,7 +40,7 @@ def two_sum(arr, k):
     return False
 
 arr = [1, 2, 4, 4]
-k = 16
+k = 8
 result = two_sum(arr, k)
 print(result)
 assert result == [2, 3]
