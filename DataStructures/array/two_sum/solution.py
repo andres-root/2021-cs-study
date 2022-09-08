@@ -50,3 +50,9 @@ k = 9
 result = two_sum(arr, k)
 print(result)
 assert result == [0, 1]
+
+arr = [1, 21, 3, 14, 5, 60, 7, 6]
+k = 81
+result = two_sum(arr, k)
+print(result)
+assert result == [1, 5]
