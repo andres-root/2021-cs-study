@@ -1,7 +1,7 @@
 from typing import List
 
 
-def min_subarray_sum_k(arr: List[int], k: int) -> int:
+def min_subarray_sum_k(s: List[str]) -> int:
     window_sum = 0
     l = 0
     h = 0

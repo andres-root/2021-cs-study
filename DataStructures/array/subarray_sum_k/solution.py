@@ -38,7 +38,7 @@ def subarray_sum_k(arr, k):
 
     return sum_arr
 arr = [1, 2, 3, 4, 5, 6]
-k = 7
+k = 3
 result = subarray_sum_k_old(arr, k)
 print(result)
 print('-----------------------')
