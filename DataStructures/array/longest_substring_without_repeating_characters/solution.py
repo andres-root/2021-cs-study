@@ -1,33 +1,63 @@
 from typing import List
+from collections import OrderedDict
 
 
-def min_subarray_sum_k(s: List[str]) -> int:
-    window_sum = 0
+def main(s: List[str]) -> int:
+    if s == '':
+        return 0
+    
+    if len(s) == 1:
+        return 1
     l = 0
     h = 0
-    mem = []
+    longest_substring = float('-inf')
 
-    while h < len(arr):
-        window_sum += arr[h]
-        h += 1
-        
-        while l < h and window_sum > k:
-            window_sum -= arr[l]
+    while h < len(s):
+        current_char = s[h]
+
+        while l < h and current_char in s[l:h]:
             l += 1
         
-        if window_sum == k:
-            mem.append(len(arr[l:h]))
-        
-    return min(mem)
+        longest_substring = max(longest_substring, h - l + 1)
+        h += 1
+
+    return longest_substring
 
 
-arr = [1, 2, 3, 4, 5, 6, 7]
-k = 7
-result = min_subarray_sum_k(arr, k)
-print(result)
+print('===========================')
+s = 'abcabcbb'
+result = main(s)
+print(f'Input: s = "{s}"')
+print(f'Output: {result}. Expected: 3')
 print('===========================')
 
-arr = [1, 1, 1, 1, 1, 1, 5, 2]
-k = 7
-result = min_subarray_sum_k(arr, k)
-print(result)
+s = 'bbbbb'
+result = main(s)
+print(f'Input: s = "{s}"')
+print(f'Output: {result}. Expected: 1')
+print('===========================')
+
+s = 'pwwkew'
+result = main(s)
+print(f'Input: s = "{s}"')
+print(f'Output: {result}. Expected: 3')
+print('===========================')
+
+s = ' '
+result = main(s)
+print(f'Input: s = "{s}"')
+print(f'Output: {result}. Expected: 1')
+print('===========================')
+
+s = '   '
+result = main(s)
+print(f'Input: s = "{s}"')
+print(f'Output: {result}. Expected: 1')
+print('===========================')
+
+s = 'au'
+result = main(s)
+print(f'Input: s = "{s}"')
+print(f'Output: {result}. Expected: 2')
+print('===========================')
+

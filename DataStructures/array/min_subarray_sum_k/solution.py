@@ -2,23 +2,21 @@ from typing import List
 
 
 def min_subarray_sum_k(arr: List[int], k: int) -> int:
+    min_lenhgth = float('inf')
     window_sum = 0
     l = 0
     h = 0
-    mem = []
 
     while h < len(arr):
         window_sum += arr[h]
         h += 1
         
-        while l < h and window_sum > k:
+        while l < h and window_sum >= k:
             window_sum -= arr[l]
             l += 1
+            min_lenhgth = min(min_lenhgth, h - l + 1)
         
-        if window_sum == k:
-            mem.append(len(arr[l:h]))
-        
-    return min(mem)
+    return min_lenhgth
 
 
 arr = [1, 2, 3, 4, 5, 6, 7]

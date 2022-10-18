@@ -3,7 +3,7 @@ Given a string s, find the length of the longest substring without repeating cha
 
 ## Example 1:
 
-Input: s = "abcabcbb"
+Input: s = "ab[cabc]bb"
 Output: 3
 Explanation: The answer is "abc", with the length of 3.
 
@@ -19,3 +19,8 @@ Input: s = "pwwkew"
 Output: 3
 Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
+## Example 4:
+
+Input: s = " "
+Output: 1
