@@ -4,29 +4,19 @@ def binary_search_iterative(nums, target):
     """
     Iterative binary search
     """
-    mid = nums[(len(nums) - 1)//2]
-    sub_arr = nums
+    l = 0
+    h = len(nums)
 
-    while len(sub_arr) > 0:
-        # import ipdb; ipdb.set_trace()
-        if len(sub_arr) == 1:
-            if sub_arr[0] == target:
-                return nums.index(sub_arr[0])
-            else:
-                return -1
+    while l < h:
+        mid = (l + h)//2
+        if nums[mid] == target:
+            return mid
 
-        if target == mid:
-            return nums.index(mid)
-        
-        if target < mid:
-            sub_arr = sub_arr[:len(sub_arr)//2]
-        
-        if target > mid:
-            sub_arr = sub_arr[len(sub_arr)//2:]
-        
-        if len(sub_arr) > 0:
-            mid = sub_arr[(len(sub_arr) - 1)//2]
-    
+        if nums[mid] < target:
+            l = mid + 1
+        else:
+            h = mid
+
     return -1
 
 def binary_search_recursive(nums, target):
